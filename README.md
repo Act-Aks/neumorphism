@@ -2,6 +2,7 @@
 
 <div align="center">
 
+![Version](https://img.shields.io/github/v/release/Act-Aks/neumorphism?style=for-the-badge&logo=github&label=Version)
 ![Neumorphism UI](https://img.shields.io/badge/UI-Neumorphism-blueviolet?style=for-the-badge)
 ![React](https://img.shields.io/badge/React-19.2.3-61DAFB?style=for-the-badge&logo=react)
 ![TypeScript](https://img.shields.io/badge/TypeScript-5.9.3-3178C6?style=for-the-badge&logo=typescript)
