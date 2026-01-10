@@ -1,0 +1,38 @@
+{
+  "name": "neomorphism",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "lint": "eslint .",
+    "preview": "vite preview",
+    "prepare": "husky",
+    "cq:fix": "bun ultracite fix",
+    "cq:check": "bun ultracite check"
+  },
+  "dependencies": {
+    "@base-ui/react": "1.0.0",
+    "@tailwindcss/vite": "4.1.18",
+    "class-variance-authority": "0.7.1",
+    "lucide-react": "0.562.0",
+    "react": "19.2.3",
+    "react-dom": "19.2.3",
+    "tailwind-merge": "3.4.0",
+    "tailwindcss": "4.1.18"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "2.3.11",
+    "@types/node": "25.0.5",
+    "@types/react": "19.2.8",
+    "@types/react-dom": "19.2.3",
+    "@vitejs/plugin-react": "5.1.2",
+    "globals": "17.0.0",
+    "husky": "9.1.7",
+    "lint-staged": "16.2.7",
+    "typescript": "~5.9.3",
+    "ultracite": "7.0.11",
+    "vite": "7.3.1"
+  }
+}
