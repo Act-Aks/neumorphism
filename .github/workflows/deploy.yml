@@ -1,12 +1,6 @@
-name: Deploy Storybook to GitHub Pages
+name: Deploy Storybook to GitHub Pages (Legacy)
 
 on:
-  push:
-    branches:
-      - main
-  pull_request:
-    branches:
-      - main
   workflow_dispatch:
 
 permissions:
@@ -31,7 +25,6 @@ jobs:
         run: bun run build-storybook
 
       - name: Deploy to GitHub Pages
-        if: github.ref == 'refs/heads/main'
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           folder: storybook-static

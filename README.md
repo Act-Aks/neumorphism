@@ -1,177 +1,236 @@
-# Neomorphism UI Library
+# ✨ Neumorphism UI Library
 
-This repository contains a modern UI component library built with React, TypeScript, and Tailwind CSS. The components are designed with a neumorphic aesthetic and are fully customizable, accessible, and ready to use in your projects.
+<div align="center">
 
-## Features
+![Neumorphism UI](https://img.shields.io/badge/UI-Neumorphism-blueviolet?style=for-the-badge)
+![React](https://img.shields.io/badge/React-19.2.3-61DAFB?style=for-the-badge&logo=react)
+![TypeScript](https://img.shields.io/badge/TypeScript-5.9.3-3178C6?style=for-the-badge&logo=typescript)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind-4.1.18-06B6D4?style=for-the-badge&logo=tailwindcss)
 
-- **Neumorphic Design**: Beautiful, soft UI components with a modern look.
-- **React + TypeScript**: Fully typed components for better developer experience.
-- **Tailwind CSS**: Utility-first CSS framework for rapid UI development.
-- **Storybook Integration**: Preview and test components in isolation.
-- **GitHub Pages Deployment**: Showcase your components with ease.
+**A modern, accessible UI component library with beautiful neumorphic design**
 
-## Getting Started
+[🚀 **Live Demo**](https://neumorphism.akashsrivastava-git.workers.dev/) • [📚 **Storybook**](https://act-aks.github.io/neumorphism/?path=/story/components-button--default) • [📦 **NPM Package**](#installation)
+
+</div>
+
+---
+
+## 🎯 Overview
+
+Neumorphism UI is a comprehensive React component library that brings the elegant, soft UI aesthetic of neumorphism to your applications. Built with modern web standards, accessibility in mind, and powered by React 19, TypeScript, and Tailwind CSS.
+
+### ✨ Key Features
+
+- 🎨 **Neumorphic Design** - Soft, tactile UI elements with depth and dimension
+- ♿ **Accessibility First** - WCAG compliant components with proper ARIA support
+- 🔧 **Fully Customizable** - Easy theming with CSS variables and Tailwind utilities
+- 📱 **Responsive** - Mobile-first design that works on all screen sizes
+- 🚀 **Modern Stack** - React 19, TypeScript 5.9, Tailwind CSS 4.1
+- 📖 **Storybook Integration** - Interactive component documentation
+- 🎯 **Tree Shakeable** - Import only what you need
+
+## 🌟 Component Showcase
+
+### 🔘 Buttons
+Interactive buttons with multiple variants, sizes, and states
+```tsx
+<Button variant="primary" size="large">Primary Action</Button>
+<Button variant="default" shape="circle" size="icon">
+  <Heart className="h-4 w-4" />
+</Button>
+```
+
+### 🏷️ Badges  
+Status indicators and labels for content categorization
+```tsx
+<Badge variant="primary">
+  <Star className="mr-1 h-3 w-3" />
+  Featured
+</Badge>
+```
+
+### 📝 Form Controls
+Beautiful form elements with neumorphic styling
+```tsx
+<Input placeholder="Enter your email..." />
+<Switch checked={isOn} onCheckedChange={setIsOn} />
+<Checkbox checked id="terms" />
+```
+
+### 📊 Interactive Elements
+Sliders, progress bars, and navigation components
+```tsx
+<Slider value={volume} onValueChange={setVolume} max={100} />
+<ProgressBar value={progress} max={100} />
+<Tabs>
+  <Tabs.TabList>
+    <Tabs.Tab value="overview">Overview</Tabs.Tab>
+    <Tabs.Tab value="features">Features</Tabs.Tab>
+  </Tabs.TabList>
+</Tabs>
+```
+
+## 🚀 Quick Start
 
 ### Prerequisites
 
-Ensure you have the following installed:
 - [Node.js](https://nodejs.org/) (v18 or higher)
-- [Bun](https://bun.sh/) (for package management)
+- [Bun](https://bun.sh/) (recommended) or npm/yarn
 
 ### Installation
 
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/your-username/neomorphism.git
-   cd neomorphism
-   ```
-
-2. Install dependencies:
-   ```bash
-   bun install
-   ```
-
-### Development
-
-To start the development server:
 ```bash
+# Clone the repository
+git clone https://github.com/Act-Aks/neumorphism.git
+cd neumorphism
+
+# Install dependencies
+bun install
+
+# Start development server
 bun run dev
 ```
 
-This will launch the app at `http://localhost:3000`.
+### Using as a Package
 
-### Storybook
-
-To view the components in isolation:
 ```bash
-bun run storybook
+# Install from GitHub Packages (coming soon)
+npm install @act-aks/neumorphism
 ```
 
-Storybook will be available at `http://localhost:6006`.
-
-## Deployment
-
-### Deploying to GitHub Pages
-
-This repository is configured to deploy both the app and Storybook to GitHub Pages. Simply push changes to the `main` branch, and the GitHub Actions workflow will handle the deployment.
-
-### Manual Deployment
-
-1. Build the app:
-   ```bash
-   bun run build
-   ```
-
-2. Build Storybook:
-   ```bash
-   bun run build-storybook
-   ```
-
-3. Deploy the `dist` and `storybook-static` directories to your hosting provider.
-
-## Components
-
-### Available Components
-
-- **Button**: Customizable buttons with various shapes, sizes, and variants.
-- **Card**: Flexible card components for displaying content.
-- **Checkbox**: Accessible checkboxes with neumorphic styling.
-- **Input**: Styled input fields for forms.
-- **Nav**: Navigation bar for your application.
-- **ProgressBar**: Animated progress indicators.
-- **Slider**: Interactive sliders for selecting values.
-- **Switch**: Toggle switches with smooth animations.
-- **Tabs**: Tabbed navigation for organizing content.
-
-### Usage
-
-Here’s an example of how to use the `Button` component:
-
 ```tsx
-import { Button } from '@/components';
+import { Button, Card, Input } from '@act-aks/neumorphism';
 
-function Example() {
+function MyApp() {
   return (
-    <Button variant="primary" size="large">
-      Click Me
-    </Button>
+    <Card className="p-6">
+      <Card.Header>
+        <Card.Title>Welcome</Card.Title>
+      </Card.Header>
+      <Card.Content>
+        <Input placeholder="Enter your name" />
+        <Button variant="primary" className="mt-4">
+          Get Started
+        </Button>
+      </Card.Content>
+    </Card>
   );
 }
 ```
 
-## Contributing
+## 🛠️ Development
+
+### Local Development
+```bash
+bun run dev          # Start development server
+bun run build        # Build for production
+bun run preview      # Preview production build
+```
+
+### Storybook
+```bash
+bun run storybook           # Start Storybook dev server
+bun run build-storybook     # Build Storybook for deployment
+```
+
+### Code Quality
+```bash
+bun run lint         # Run ESLint
+bun run cq:check     # Check code quality
+bun run cq:fix       # Fix code quality issues
+```
+
+## 📦 Available Components
+
+| Component | Description | Status |
+|-----------|-------------|--------|
+| **Button** | Interactive buttons with variants, sizes, and shapes | ✅ Ready |
+| **Badge** | Status indicators and content labels | ✅ Ready |
+| **Card** | Flexible containers for content organization | ✅ Ready |
+| **Checkbox** | Accessible checkboxes with neumorphic styling | ✅ Ready |
+| **Input** | Styled form input fields | ✅ Ready |
+| **Nav** | Navigation bar component | ✅ Ready |
+| **ProgressBar** | Animated progress indicators | ✅ Ready |
+| **Slider** | Interactive range sliders | ✅ Ready |
+| **Switch** | Toggle switches with smooth animations | ✅ Ready |
+| **Tabs** | Tabbed navigation for content organization | ✅ Ready |
+
+## 🎨 Customization
+
+The library uses CSS custom properties for easy theming:
+
+```css
+:root {
+  --color-primary: 220 100% 50%;
+  --color-background: 220 13% 91%;
+  --color-foreground: 220 9% 9%;
+  --shadow-raised: /* neumorphic raised shadow */;
+  --shadow-inset: /* neumorphic inset shadow */;
+}
+```
+
+## 🌐 Live Examples
+
+- **🚀 [Main Demo](https://neumorphism.akashsrivastava-git.workers.dev/)** - Interactive showcase of all components
+- **📚 [Storybook](https://act-aks.github.io/neumorphism/?path=/story/components-button--default)** - Component documentation and playground
+
+## 📋 Roadmap
+
+- [x] 📦 NPM Package Release Setup
+- [x] 🤖 Automated Semantic Releases
+- [ ] 🎨 Theme Builder Tool  
+- [ ] 📱 Mobile Components (Drawer, Sheet, etc.)
+- [ ] 🔍 Search & Filter Components
+- [ ] 📊 Data Visualization Components
+- [ ] 🌙 Dark Mode Support Enhancement
+
+## 🚀 Releases
+
+This project uses [Semantic Release](https://semantic-release.gitbook.io/) for automated versioning and publishing. Releases are triggered automatically when commits are pushed to the main branch.
+
+### Release Types
+
+- **Patch Release** (1.0.1): Bug fixes (`fix:` commits)
+- **Minor Release** (1.1.0): New features (`feat:` commits)
+- **Major Release** (2.0.0): Breaking changes (`BREAKING CHANGE:` in commit)
+
+### Installation from GitHub Packages
+
+```bash
+# Configure npm to use GitHub Packages
+echo "@act-aks:registry=https://npm.pkg.github.com" >> .npmrc
+
+# Install the package
+npm install @act-aks/neumorphism
+```
+
+## 🤝 Contributing
 
 We welcome contributions! Please follow these steps:
 
-1. Fork the repository.
-2. Create a new branch for your feature or bugfix.
-3. Commit your changes and open a pull request.
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
 
-## License
+## 📄 License
 
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
-## React Compiler
+## 🙏 Acknowledgments
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- Built with [React](https://reactjs.org/) and [TypeScript](https://www.typescriptlang.org/)
+- Styled with [Tailwind CSS](https://tailwindcss.com/)
+- Components based on [Base UI](https://base-ui.com/)
+- Icons from [Lucide React](https://lucide.dev/)
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+<div align="center">
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+**Made with ❤️ by [Akash Srivastava](https://github.com/Act-Aks)**
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+⭐ Star this repo if you find it helpful!
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
-
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+</div>

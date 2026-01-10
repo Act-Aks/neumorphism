@@ -1,18 +1,57 @@
 {
-  "name": "neomorphism",
-  "private": true,
+  "name": "@act-aks/neumorphism-ui",
+  "private": false,
   "version": "1.0.0",
   "type": "module",
+  "description": "A modern, accessible UI component library with beautiful neumorphic design",
+  "keywords": [
+    "react",
+    "typescript",
+    "tailwind",
+    "neumorphism",
+    "ui-components",
+    "design-system"
+  ],
+  "author": "Akash Srivastava <akash@example.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Act-Aks/neumorphism.git"
+  },
+  "homepage": "https://neumorphism.akashsrivastava-git.workers.dev/",
+  "bugs": {
+    "url": "https://github.com/Act-Aks/neumorphism/issues"
+  },
+  "main": "./dist/index.js",
+  "module": "./dist/index.esm.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.esm.js",
+      "require": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    },
+    "./styles": "./dist/styles.css"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  },
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
-    "lint": "eslint .",
+    "build:lib": "vite build --mode library",
     "preview": "vite preview",
     "prepare": "husky",
     "cq:fix": "bun ultracite fix",
     "cq:check": "bun ultracite check",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "build-storybook": "storybook build",
+    "semantic-release": "semantic-release"
   },
   "dependencies": {
     "@base-ui/react": "1.0.0",
@@ -27,25 +66,32 @@
   "devDependencies": {
     "@biomejs/biome": "2.3.11",
     "@chromatic-com/storybook": "4.1.3",
+    "@semantic-release/changelog": "6.0.3",
+    "@semantic-release/git": "10.0.1",
+    "@semantic-release/github": "12.0.2",
     "@storybook/addon-a11y": "10.1.11",
     "@storybook/addon-docs": "10.1.11",
     "@storybook/addon-onboarding": "10.1.11",
     "@storybook/addon-vitest": "10.1.11",
     "@storybook/react-vite": "10.1.11",
+    "@types/bun": "1.3.5",
     "@types/node": "25.0.5",
     "@types/react": "19.2.8",
     "@types/react-dom": "19.2.3",
     "@vitejs/plugin-react": "5.1.2",
     "@vitest/browser-playwright": "4.0.16",
     "@vitest/coverage-v8": "4.0.16",
+    "bun-plugin-dts": "0.3.0",
     "globals": "17.0.0",
     "husky": "9.1.7",
     "lint-staged": "16.2.7",
     "playwright": "1.57.0",
+    "semantic-release": "25.0.2",
     "storybook": "10.1.11",
     "typescript": "~5.9.3",
     "ultracite": "7.0.11",
     "vite": "7.3.1",
+    "vite-plugin-dts": "4.5.4",
     "vitest": "4.0.16",
     "wrangler": "4.58.0"
   }
