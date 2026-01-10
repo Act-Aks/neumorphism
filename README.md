@@ -1,11 +1,115 @@
-# React + TypeScript + Vite
+# Neomorphism UI Library
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This repository contains a modern UI component library built with React, TypeScript, and Tailwind CSS. The components are designed with a neumorphic aesthetic and are fully customizable, accessible, and ready to use in your projects.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Neumorphic Design**: Beautiful, soft UI components with a modern look.
+- **React + TypeScript**: Fully typed components for better developer experience.
+- **Tailwind CSS**: Utility-first CSS framework for rapid UI development.
+- **Storybook Integration**: Preview and test components in isolation.
+- **GitHub Pages Deployment**: Showcase your components with ease.
+
+## Getting Started
+
+### Prerequisites
+
+Ensure you have the following installed:
+- [Node.js](https://nodejs.org/) (v18 or higher)
+- [Bun](https://bun.sh/) (for package management)
+
+### Installation
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/your-username/neomorphism.git
+   cd neomorphism
+   ```
+
+2. Install dependencies:
+   ```bash
+   bun install
+   ```
+
+### Development
+
+To start the development server:
+```bash
+bun run dev
+```
+
+This will launch the app at `http://localhost:3000`.
+
+### Storybook
+
+To view the components in isolation:
+```bash
+bun run storybook
+```
+
+Storybook will be available at `http://localhost:6006`.
+
+## Deployment
+
+### Deploying to GitHub Pages
+
+This repository is configured to deploy both the app and Storybook to GitHub Pages. Simply push changes to the `main` branch, and the GitHub Actions workflow will handle the deployment.
+
+### Manual Deployment
+
+1. Build the app:
+   ```bash
+   bun run build
+   ```
+
+2. Build Storybook:
+   ```bash
+   bun run build-storybook
+   ```
+
+3. Deploy the `dist` and `storybook-static` directories to your hosting provider.
+
+## Components
+
+### Available Components
+
+- **Button**: Customizable buttons with various shapes, sizes, and variants.
+- **Card**: Flexible card components for displaying content.
+- **Checkbox**: Accessible checkboxes with neumorphic styling.
+- **Input**: Styled input fields for forms.
+- **Nav**: Navigation bar for your application.
+- **ProgressBar**: Animated progress indicators.
+- **Slider**: Interactive sliders for selecting values.
+- **Switch**: Toggle switches with smooth animations.
+- **Tabs**: Tabbed navigation for organizing content.
+
+### Usage
+
+Here’s an example of how to use the `Button` component:
+
+```tsx
+import { Button } from '@/components';
+
+function Example() {
+  return (
+    <Button variant="primary" size="large">
+      Click Me
+    </Button>
+  );
+}
+```
+
+## Contributing
+
+We welcome contributions! Please follow these steps:
+
+1. Fork the repository.
+2. Create a new branch for your feature or bugfix.
+3. Commit your changes and open a pull request.
+
+## License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
 ## React Compiler
 

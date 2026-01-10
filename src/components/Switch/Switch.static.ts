@@ -1,4 +1,4 @@
-import type { useRender } from '@base-ui/react/use-render'
+import type { Switch } from '@base-ui/react'
 import { cva, type VariantProps } from 'class-variance-authority'
 
 export const switchVariants = cva(
@@ -9,5 +9,5 @@ export const switchThumbVariants = cva(
 )
 
 export interface SwitchProps
-    extends useRender.ComponentProps<'switch'>,
+    extends React.ComponentProps<typeof Switch.Root>,
         VariantProps<typeof switchVariants> {}
