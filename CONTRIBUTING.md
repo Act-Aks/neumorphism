@@ -74,7 +74,6 @@ Releases are automated using semantic-release:
 
 ## 🧪 Testing
 
-- Run linting: `bun run lint`
 - Run code quality checks: `bun run cq:check`
 - Test Storybook build: `bun run build-storybook`
 

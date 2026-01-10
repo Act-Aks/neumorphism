@@ -33,7 +33,6 @@ jobs:
       - name: Run tests and linting
         run: |
           bun run cq:check
-          bun run lint
 
       - name: Build library
         run: bun run build:lib

@@ -135,7 +135,6 @@ bun run build-storybook     # Build Storybook for deployment
 
 ### Code Quality
 ```bash
-bun run lint         # Run ESLint
 bun run cq:check     # Check code quality
 bun run cq:fix       # Fix code quality issues
 ```
