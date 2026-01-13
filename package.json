@@ -12,7 +12,7 @@
     "ui-components",
     "design-system"
   ],
-  "author": "Akash Srivastava <akash@example.com>",
+  "author": "Akash Srivastava akashsrivastava.git@gmail.com",
   "license": "MIT",
   "repository": {
     "type": "git",
@@ -38,9 +38,6 @@
     "README.md",
     "LICENSE"
   ],
-  "publishConfig": {
-    "registry": "https://npm.pkg.github.com"
-  },
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
