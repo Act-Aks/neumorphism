@@ -1,3 +1,10 @@
+# [1.1.0](https://github.com/Act-Aks/neumorphism/compare/v1.0.0...v1.1.0) (2026-01-13)
+
+
+### Features
+
+* **release:** configure GitHub Packages registry and update dependencies ([59dccab](https://github.com/Act-Aks/neumorphism/commit/59dccab276522959ff3a0da2cf5a50b6b751d2da))
+
 # 1.0.0 (2026-01-10)
 
 
