@@ -36,6 +36,7 @@ jobs:
           node-version: '24'
           registry-url: https://npm.pkg.github.com
           scope: '@act-aks'
+          token:  ${{ secrets.GH_RELEASE_TOKEN }}
 
       - name: Setup Bun
         uses: oven-sh/setup-bun@v2

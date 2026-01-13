@@ -16,7 +16,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/Act-Aks/neumorphism.git"
+    "url": "git+https://github.com/Act-Aks/neumorphism.git"
   },
   "homepage": "https://neumorphism.akashsrivastava-git.workers.dev/",
   "bugs": {
