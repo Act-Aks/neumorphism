@@ -7,8 +7,8 @@
     [
       "@semantic-release/npm",
       {
-        "npmPublish": false,
-        "tarballDir": "dist"
+        "registry": "https://npm.pkg.github.com",
+        "pkgRoot": "dist"
       }
     ],
     [

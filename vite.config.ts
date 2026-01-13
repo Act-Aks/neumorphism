@@ -1,6 +1,5 @@
 /// <reference types="vitest/config" />
 import path from 'node:path'
-// https://vite.dev/config/
 import { fileURLToPath } from 'node:url'
 import { storybookTest } from '@storybook/addon-vitest/vitest-plugin'
 import tailwindcss from '@tailwindcss/vite'
@@ -9,42 +8,90 @@ import { playwright } from '@vitest/browser-playwright'
 import { defineConfig } from 'vite'
 import dts from 'vite-plugin-dts'
 
-const dirname =
-    typeof __dirname !== 'undefined' ? __dirname : path.dirname(fileURLToPath(import.meta.url))
+const __dirname = path.dirname(fileURLToPath(import.meta.url))
 
-// More info at: https://storybook.js.org/docs/next/writing-tests/integrations/vitest-addon
 export default defineConfig(({ mode }) => {
     const isLibrary = mode === 'library'
 
     return {
-        // Use relative paths so the built site works when deployed under a subpath
         base: './',
         build: isLibrary
             ? {
+                  cssCodeSplit: false,
                   emptyOutDir: true,
                   lib: {
                       entry: path.resolve(__dirname, 'src/components/index.ts'),
-                      fileName: format => `index.${format === 'es' ? 'esm.js' : 'js'}`,
+                      fileName: format => {
+                          if (format === 'es') {
+                              return 'index.mjs'
+                          }
+                          if (format === 'cjs') {
+                              return 'index.cjs'
+                          }
+                          return 'index.js'
+                      },
                       formats: ['es', 'cjs'],
                       name: 'NeumorphismUI',
                   },
                   rollupOptions: {
-                      external: ['react', 'react-dom', 'react/jsx-runtime'],
-                      output: {
-                          globals: {
-                              react: 'React',
-                              'react-dom': 'ReactDOM',
-                              'react/jsx-runtime': 'react/jsx-runtime',
+                      // Mark these as external so they're not bundled
+                      external: [
+                          'react',
+                          'react-dom',
+                          'react/jsx-runtime',
+                          '@base-ui/react',
+                          'tailwindcss',
+                          'tailwind-merge',
+                          'class-variance-authority',
+                          'lucide-react',
+                      ],
+                      output: [
+                          {
+                              entryFileNames: 'index.mjs',
+                              format: 'es',
+                              globals: {
+                                  '@base-ui/react': 'BaseUI',
+                                  'class-variance-authority': 'cva',
+                                  'lucide-react': 'lucideReact',
+                                  react: 'React',
+                                  'react-dom': 'ReactDOM',
+                                  'react/jsx-runtime': 'react/jsx-runtime',
+                                  'tailwind-merge': 'twMerge',
+                                  tailwindcss: 'tailwindcss',
+                              },
                           },
-                      },
+                          {
+                              entryFileNames: 'index.cjs',
+                              format: 'cjs',
+                              globals: {
+                                  '@base-ui/react': 'BaseUI',
+                                  'class-variance-authority': 'cva',
+                                  'lucide-react': 'lucideReact',
+                                  react: 'React',
+                                  'react-dom': 'ReactDOM',
+                                  'react/jsx-runtime': 'react/jsx-runtime',
+                                  'tailwind-merge': 'twMerge',
+                                  tailwindcss: 'tailwindcss',
+                              },
+                          },
+                      ],
                   },
                   sourcemap: true,
               }
             : undefined,
         plugins: [
-            react(),
+            react({
+                jsxRuntime: 'automatic',
+            }),
             tailwindcss(),
-            ...(isLibrary ? [dts({ include: ['src/components/**/*'] })] : []),
+            ...(isLibrary
+                ? [
+                      dts({
+                          include: ['src/components'],
+                          tsconfigPath: path.resolve(__dirname, 'tsconfig.json'),
+                      }),
+                  ]
+                : []),
         ],
         resolve: {
             alias: {
@@ -56,10 +103,8 @@ export default defineConfig(({ mode }) => {
                 {
                     extends: true,
                     plugins: [
-                        // The plugin will run tests for the stories defined in your Storybook config
-                        // See options at: https://storybook.js.org/docs/next/writing-tests/integrations/vitest-addon#storybooktest
                         storybookTest({
-                            configDir: path.join(dirname, '.storybook'),
+                            configDir: path.join(__dirname, '.storybook'),
                         }),
                     ],
                     test: {
