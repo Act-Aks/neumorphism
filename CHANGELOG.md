@@ -1,3 +1,10 @@
+## [1.1.1](https://github.com/Act-Aks/neumorphism/compare/v1.1.0...v1.1.1) (2026-01-13)
+
+
+### Bug Fixes
+
+* add authentication token and update repository URL format ([ad12607](https://github.com/Act-Aks/neumorphism/commit/ad126075a90e4f355b49d5122be79499b0fe0d1a))
+
 # [1.1.0](https://github.com/Act-Aks/neumorphism/compare/v1.0.0...v1.1.0) (2026-01-13)
 
 
